@@ -2,12 +2,19 @@
 
 #include "palindrome.h"
 
+char *assertionPalindrome;
+
 void is_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
+  assertionPalindrome = palindrome(str);
+  ASSERT_STREQ(assertionPalindrome, "Yes");
+  free(assertionPalindrome);
 }
 
 void not_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "No");
+  assertionPalindrome = palindrome(str);
+  // ASSERT_STREQ(palindrome(str), "No");
+  ASSERT_STREQ(assertionPalindrome, "No");
+  free(assertionPalindrome);
 }
 
 TEST(Palindrome, HandlesEmptyString) {
