@@ -4,10 +4,6 @@
 
 #include "palindrome.h"
 
-// Delete this line on completion of deleting unncessary comments
-// The long-winded comments and explanations of imploding code
-// Is to help for my explanation to Machi about my reasoning and process.
-
 int main(int argc, char *argv[]) {
   char *line;
   int size;
@@ -33,12 +29,6 @@ int main(int argc, char *argv[]) {
     output = palindrome(line);
     //
     // Replaced the palindrome method call with the new variable.
-    // Because we are already freeing the line variable lower down
-    // The leak had to come from another source utilizing the line variable
-    // the line variable in the print statement is simply part of the 
-    // output asking if the string is a palindrome here.
-    // So it had to be the palindrome method call that had no reasonable
-    // way of being freed as it was.
     //
     printf("Is the string <%s> a palindrome? %s\n", line, output);
     //
