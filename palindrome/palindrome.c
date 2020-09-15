@@ -32,6 +32,7 @@ char *palindrome(char const *str) {
     }
     ++i;
   }
+// Freeing rev variable after final use
 free(rev);
   if (result) {
     answer = (char*) calloc(4, sizeof(char));
