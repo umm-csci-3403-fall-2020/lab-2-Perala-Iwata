@@ -46,7 +46,7 @@ char *disemvowel(char *str) {
   // Setting up the result array with an amount of space appropriate for after
   // the original str input has been disemvoweled.
   result = (char*) calloc(newLen + 1, sizeof(char));
-
+  
   // Variable to keep track of the indice of the result array.
   int ind, j;
   ind = 0;  
@@ -57,7 +57,6 @@ char *disemvowel(char *str) {
 	ind++;
   }
 }
-
   result[newLen] = '\0';
 
   return result;
