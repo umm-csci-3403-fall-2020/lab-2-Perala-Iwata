@@ -21,7 +21,7 @@ char *disemvowel(char *str) {
   newLen = len;
 
   // Array to hold the original str input for parsing.
-  strHolder = (char*) calloc(len + 1, sizeof(char));
+  // strHolder = (char*) calloc(len + 1, sizeof(char));
 
   // Iterating through the original str input to count any present vowels.
   // This will then de-increment the len variable so we can allocate an
@@ -30,19 +30,19 @@ char *disemvowel(char *str) {
   for (i = 0; i < len; i++) {
 
 	// Disgusting if statement to check for uppercase or lowercase
-	// vowels and index i.
+	// vowels at index i.
 	// This might be better achieved with a vector but I am not super
 	// familiar with that structure in this language.
-  	if (strHolder[i] == 'a' 
-             | strHolder[i] == 'e' 
-	     | strHolder[i] == 'i'  
-	     | strHolder[i] == 'o' 
-	     | strHolder[i] == 'u' 
-	     | strHolder[i] == 'A' 
-	     | strHolder[i] == 'E' 
-	     | strHolder[i] == 'I' 
-	     | strHolder[i] == 'O' 
-	     | strHolder[i] == 'U'
+  	if (str[i] == 'a' 
+             | str[i] == 'e' 
+	     | str[i] == 'i'  
+	     | str[i] == 'o' 
+	     | str[i] == 'u' 
+	     | str[i] == 'A' 
+	     | str[i] == 'E' 
+	     | str[i] == 'I' 
+	     | str[i] == 'O' 
+	     | str[i] == 'U'
 				  ){
 	newLen--;
 	}
@@ -60,23 +60,23 @@ char *disemvowel(char *str) {
   ind = 0;  
 
   for(i = 0; i < len; i++) {
-  	if (strHolder[i] != 'a' 
-             | strHolder[i] != 'e' 
-	     | strHolder[i] != 'i'  
-	     | strHolder[i] != 'o' 
-	     | strHolder[i] != 'u' 
-	     | strHolder[i] != 'A' 
-	     | strHolder[i] != 'E' 
-	     | strHolder[i] != 'I' 
-	     | strHolder[i] != 'O' 
-	     | strHolder[i] != 'U'
+  	if (str[i] != 'a' 
+             & str[i] != 'e' 
+	     & str[i] != 'i'  
+	     & str[i] != 'o' 
+	     & str[i] != 'u' 
+	     & str[i] != 'A' 
+	     & str[i] != 'E' 
+	     & str[i] != 'I' 
+	     & str[i] != 'O' 
+	     & str[i] != 'U'
 				  ){
-	result[ind] = strHolder[i];
+	result[ind] = str[i];
 	ind++;
   }
 }
 
-  result[len] = '\0';
+  result[newLen] = '\0';
 
   return result;
 }
