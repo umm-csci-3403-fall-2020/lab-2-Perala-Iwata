@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "disemvowel.h"
+#include <stdbool.h>
 
 bool isVowel(char x);
 
@@ -58,7 +59,7 @@ char *disemvowel(char *str) {
   }
 }
   result[newLen] = '\0';
-
+  
   return result;
 }
 
