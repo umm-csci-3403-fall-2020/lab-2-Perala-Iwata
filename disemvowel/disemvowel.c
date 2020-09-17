@@ -2,6 +2,8 @@
 #include <string.h>
 #include "disemvowel.h"
 
+bool isVowel(char x);
+
 char *disemvowel(char *str) {
 
   // Declaring variable for the string length.
@@ -33,17 +35,7 @@ char *disemvowel(char *str) {
 	// vowels at index i.
 	// This might be better achieved with a vector but I am not super
 	// familiar with that structure in this language.
-  	if (str[i] == 'a' 
-             | str[i] == 'e' 
-	     | str[i] == 'i'  
-	     | str[i] == 'o' 
-	     | str[i] == 'u' 
-	     | str[i] == 'A' 
-	     | str[i] == 'E' 
-	     | str[i] == 'I' 
-	     | str[i] == 'O' 
-	     | str[i] == 'U'
-				  ){
+  	if (isVowel(str[i])){
 	newLen--;
 	}
   }
@@ -60,17 +52,7 @@ char *disemvowel(char *str) {
   ind = 0;  
 
   for(i = 0; i < len; i++) {
-  	if (str[i] != 'a' 
-             & str[i] != 'e' 
-	     & str[i] != 'i'  
-	     & str[i] != 'o' 
-	     & str[i] != 'u' 
-	     & str[i] != 'A' 
-	     & str[i] != 'E' 
-	     & str[i] != 'I' 
-	     & str[i] != 'O' 
-	     & str[i] != 'U'
-				  ){
+  	if (!isVowel(str[i])){
 	result[ind] = str[i];
 	ind++;
   }
@@ -81,7 +63,22 @@ char *disemvowel(char *str) {
   return result;
 }
 
-
+// Function to check if the character is a vowel
+bool isVowel(char x){
+ if (x == 'a' ||
+     x == 'e' ||
+     x == 'i' ||
+     x == 'o' ||
+     x == 'u' ||
+     x == 'A' ||
+     x == 'E' ||
+     x == 'I' ||
+     x == 'O' ||
+     x == 'U'){
+	return true;
+    }
+	return false;
+}
 
 
 
