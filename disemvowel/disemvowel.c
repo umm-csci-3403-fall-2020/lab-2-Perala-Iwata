@@ -32,10 +32,7 @@ char *disemvowel(char *str) {
   // Incrementing the i variable using prefix might cause issues, use postfix?
   for (i = 0; i < len; i++) {
 
-	// Disgusting if statement to check for uppercase or lowercase
-	// vowels at index i.
-	// This might be better achieved with a vector but I am not super
-	// familiar with that structure in this language.
+	// Checking which characters are vowels.
   	if (isVowel(str[i])){
 	newLen--;
 	}
@@ -52,6 +49,7 @@ char *disemvowel(char *str) {
   int ind, j;
   ind = 0;  
 
+  // Checking which characters are not vowels and adding them to the array
   for(i = 0; i < len; i++) {
   	if (!isVowel(str[i])){
 	result[ind] = str[i];
