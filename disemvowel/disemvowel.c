@@ -74,9 +74,9 @@ bool isVowel(char x){
      x == 'I' ||
      x == 'O' ||
      x == 'U'){
-	return true;
+	return 1;
     }
-	return false;
+	return 0;
 }
 
 
