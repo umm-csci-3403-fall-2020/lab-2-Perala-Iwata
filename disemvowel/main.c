@@ -13,4 +13,4 @@ int main(int argc, char *argv[]) {
     printf("%s\n", disemvowel(line));
   }
   free(line);
-}
+ }

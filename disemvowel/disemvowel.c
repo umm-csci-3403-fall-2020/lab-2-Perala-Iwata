@@ -11,9 +11,11 @@ char *disemvowel(char *str) {
   // This length will also be used to allocate space in the array.
   int len, i;
   // This new length will allocate space in the array for the altered word.
-  int newLen,k;
+  int newLen;
   // Used to hold the original string to parse through looking for vowels.
-  char *strHolder;
+  
+  //  char *strHolder;
+  
   // Where the altered string will be placed to return at the end.
   char *result;
 
@@ -24,7 +26,7 @@ char *disemvowel(char *str) {
   newLen = len;
 
   // Array to hold the original str input for parsing.
-  // strHolder = (char*) calloc(len + 1, sizeof(char));
+  //strHolder = (char*) calloc(len + 1, sizeof(char));
 
   // Iterating through the original str input to count any present vowels.
   // This will then de-increment the len variable so we can allocate an
@@ -36,8 +38,8 @@ char *disemvowel(char *str) {
   	if (isVowel(str[i])){
 	newLen--;
 	}
+
   }
-  
   // Freeing the array used to hold the initial str input.
   // Actually probably need this later but I can come back to it.
 
@@ -46,7 +48,7 @@ char *disemvowel(char *str) {
   result = (char*) calloc(newLen + 1, sizeof(char));
   
   // Variable to keep track of the indice of the result array.
-  int ind, j;
+   int ind;
   ind = 0;  
 
   // Checking which characters are not vowels and adding them to the array
@@ -57,7 +59,7 @@ char *disemvowel(char *str) {
   }
 }
   result[newLen] = '\0';
-  
+  free(result);  
   return result;
 }
 
