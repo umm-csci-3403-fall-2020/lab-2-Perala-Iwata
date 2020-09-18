@@ -14,7 +14,7 @@ char *disemvowel(char *str) {
   int newLen;
   // Used to hold the original string to parse through looking for vowels.
   
-  //  char *strHolder;
+  //char *strHolder;
   
   // Where the altered string will be placed to return at the end.
   char *result;
@@ -49,7 +49,7 @@ char *disemvowel(char *str) {
   
   // Variable to keep track of the indice of the result array.
    int ind;
-  ind = 0;  
+   ind = 0;  
 
   // Checking which characters are not vowels and adding them to the array
   for(i = 0; i < len; i++) {
@@ -59,7 +59,7 @@ char *disemvowel(char *str) {
   }
 }
   result[newLen] = '\0';
-  free(result);  
+
   return result;
 }
 
